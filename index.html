@@ -21,11 +21,11 @@
         font-family: 'Roboto','sans-serif';
         line-height: 30px;
         padding-left: 50px;
-         color:white;
+        color:white;
       }
 
       #right-panel select, #right-panel input {
-        font-size: 15px;
+        font-size: 18px;
        
       }
 
@@ -36,19 +36,19 @@
       #right-panel i {
         font-size:12px;
         
-        background-color: #181a1b;
+        
       }
       html, body {
         height: 80%;
         margin: 0;
         padding: 0;
-        background-color: #181a1b;
+        background-color: #1e2023;
       }
       #map {
-        height: 100%px;
+        height: 100%;
         float: left;
         width: 72%;
-        height: 690px;
+        height: 695px;
       }
       #right-panel {
         margin: 10px;
@@ -57,15 +57,15 @@
         height: 400px;
         float: left;
         text-align: left;
-        padding-top: 0;
+        padding-top: 50px;
         
       }
       #directions-panel {
         margin-top: 10px;
-        background-color: #181a1b;
+        background-color: #1e2023;
         padding: 10px;
         overflow: scroll;
-        height: 353px;
+        height: 298px;
       }
     </style>
   </head>
@@ -174,14 +174,14 @@
             // For each route, display summary information.
             for (var i = 0; i < route.legs.length; i++) {
               var routeSegment = i + 1;
-              summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
+              summaryPanel.innerHTML += '<b>Enjoy your trip: ' + routeSegment +
                   '</b><br>';
               summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
               summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
               summaryPanel.innerHTML += route.legs[i].distance.text + '<br><br>';
             }
           } else {
-            window.alert('Directions request failed due to ' + status);
+            window.alert('Hi! How can we help you?, Lets Chat.:)' + status);
           }
         });
       }
@@ -194,8 +194,7 @@
   </body>
 </html>
     
-    
-
+   
 
 
 
