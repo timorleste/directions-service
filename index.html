@@ -73,11 +73,19 @@
   <body>
     <div id="map"></div>
     <div id="right-panel">
+    
+    <div>
+    <b></b>
+    <p><font color="#605e5e">Office: Rua Formosa No.19. Vera Cruz, Suco Colmera, Rai Nain
+    Dili.</font></p>
+    
+    
+    
     <div>
     <b>Husi:</b>
     <select id="start">
     
-      <option value="Centro Audiovisual Max Stahl Timor Leste, ">CAMSTL</option>
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
       
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
@@ -98,7 +106,7 @@
     <i>(Ctrl+Click or Cmd+Click for Multiple Selection)</i> <br>
     <select multiple id="waypoints">
     
-      <option value="Centro Audiovisual Max Stahl Timor Leste, ">CAMSTL</option>
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
       
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
@@ -117,7 +125,7 @@
     <br>
     <b>Atu Ba:</b>
     <select id="end">
-      <option value="Centro Audiovisual Max Stahl Timor Leste, ">CAMSTL</option>
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
       
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
@@ -175,7 +183,7 @@
           destination: document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
-          travelMode: 'DRIVING'
+          travelMode: 'WALKING'
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
@@ -204,34 +212,5 @@
     </script>
   </body>
 </html>
-
-
-	
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v3.3'
-    });
-  };
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your customer chat code -->
-<div class="fb-customerchat"
-  attribution=setup_tool
-  page_id="217976488372499"
-  logged_in_greeting="Ola! How can we help you?"
-  logged_out_greeting="Ola! How can we help you?">
-</div>
-	
     
    
