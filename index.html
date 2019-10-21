@@ -14,8 +14,7 @@
     <meta name="description" content="Our mission is to help facilitate the newly independent East-Timor in accessing the voices and the key events in its past and fostering an understanding of its unique cultural heritage; to help unite and secure the identity of the country and its people; and to contribute to the forging of a new democratic nation. To ensure the survival of unique resources which contain and communicate the experience and the story of Timor-Leste and to place these at the service of peace and understanding, in Timor-Leste, Regionally and Internationally.">
     <meta name="keywords" content="Information, Technology, Media, System, Management, Audio, Visual, Archive, CAMSTL, East-Timor, Timor-Leste, Timor-Lorosa'e">
 
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
+  
     <style>
       #right-panel {
         font-family: 'Roboto','sans-serif';
@@ -34,8 +33,7 @@
       }
 
       #right-panel i {
-        font-size:12px;
-        
+        font-size:12px;      
         
       }
       html, body {
@@ -57,7 +55,7 @@
         height: 400px;
         float: left;
         text-align: left;
-        padding-top: 50px;
+        padding-top: 20px;
         
       }
       #directions-panel {
@@ -65,7 +63,7 @@
         background-color: #1e2023;
         padding: 10px;
         overflow: scroll;
-        height: 298px;
+        height: 235px;
         border: 0;
       }
     </style>
@@ -73,20 +71,14 @@
   <body>
     <div id="map"></div>
     <div id="right-panel">
-    
     <div>
     <b></b>
     <p><font color="#605e5e">Office: Rua Formosa No.19. Vera Cruz, Suco Colmera, Rai Nain
     Dili.</font></p>
-    
-    
-    
     <div>
     <b>Husi:</b>
-    <select id="start">
-    
-      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
-      
+    <select id="start"> 
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option> 
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
       <option value="Baucau, ">Baucau</option>
@@ -105,9 +97,7 @@
     <b>Liu:</b> <br>
     <i>(Ctrl+Click or Cmd+Click for Multiple Selection)</i> <br>
     <select multiple id="waypoints">
-    
-      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
-      
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>     
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
       <option value="Baucau, ">Baucau</option>
@@ -125,8 +115,7 @@
     <br>
     <b>Atu Ba:</b>
     <select id="end">
-      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>
-      
+      <option value="Centro Audiovisual Max Stahl Timor Leste, Dili, ">CAMSTL</option>     
       <option value="Aileu,">Aileu</option>
       <option value="Ainaro,">Ainaro</option>
       <option value="Baucau, ">Baucau</option>
@@ -140,8 +129,7 @@
       <option value="Manufahi, ">Manufahi</option>
       <option value="Oecusse, ">Oecusse</option>
       <option value="Viqueque, ">Viqueque</option>
-      
-      
+          
     </select>
     <br>
       <input type="submit" id="submit">
@@ -149,8 +137,7 @@
     <div id="directions-panel"></div>
     </div>
     <script>
-      
-      
+          
      function initMap() {
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;    
@@ -183,16 +170,23 @@
           destination: document.getElementById('end').value,
           waypoints: waypts,
           optimizeWaypoints: true,
-          travelMode: 'WALKING'
+          travelMode: 'DRIVING',
+       
         }, function(response, status) {
-          if (status === 'OK') {
+          if (status === google.maps.DirectionsStatus.OK) {
+              
             directionsDisplay.setDirections(response);
             var route = response.routes[0];
+              
             var summaryPanel = document.getElementById('directions-panel');
             summaryPanel.innerHTML = '';
             // For each route, display summary information.
             for (var i = 0; i < route.legs.length; i++) {
               var routeSegment = i + 1;
+                      
+              var trafficLayer = new google.maps.TrafficLayer();
+ 		 trafficLayer.setMap(map);
+                      
               summaryPanel.innerHTML += '<b>Enjoy your trip: ' + routeSegment +
                   '</b><br>';
               summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
@@ -204,8 +198,7 @@
           }
         });
       }
-    </script>
-    
+    </script> 
     
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4TDJ8a5yywp0VuL8nq3_JIjp3W9QaUkM&callback=initMap">
@@ -213,8 +206,7 @@
   </body>
 </html>
     
-  
-	
+
 <!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
